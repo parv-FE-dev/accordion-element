@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AccordionButton() {
+function AccordionButton(props) {
   return (
     <div>
-      
+      {props.buttonText}
     </div>
   )
 }

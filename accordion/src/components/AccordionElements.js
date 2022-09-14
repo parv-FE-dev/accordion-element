@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AccordionElements() {
+function AccordionElements(props) {
   return (
     <div>
-      
+      {props.elementText}
     </div>
   )
 }
