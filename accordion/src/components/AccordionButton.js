@@ -1,8 +1,9 @@
 import React from 'react'
+import './AccordionButton.css'
 
 function AccordionButton(props) {
   return (
-    <div>
+    <div className='accordionButton'>
       {props.buttonText}
     </div>
   )
