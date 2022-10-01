@@ -1,0 +1,54 @@
+
+.plgAccordion{ 
+    list-style: none;
+    height: 100%;
+  }
+.plgAccordion > li > input{
+    display: none;   
+}
+.plgAccordion > li > input[type="radio"]:not(:checked) ~ section { 
+  height: 0;
+}
+.plgAccordion > li > input[type="radio"]:checked ~ section {
+  height: auto;
+}
+
+.plgAccordion > li > label {
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+.plgAccordion > li > input[type="radio"]:not(:checked) ~ label > * {
+    white-space: nowrap;
+}
+
+.plgAccordion > li > section {
+    display: block;
+    height: 0px;
+    padding: 0;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    background-color: #fff;
+}
+
+.plgAccordion > li input[type="radio"]:not(:checked) ~ section { 
+  height: 0;
+}
+.plgAccordion .plgAccordionContent{
+    /* height: 100%; */
+  }
+  
+  .plgAccordion .plgAccordionContainWrap{
+    width: 100%;
+  }
+
+.plgAccordion .listItem{
+    height: 100%;
+    display: block;
+}
+
