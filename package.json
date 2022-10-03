@@ -1,31 +1,34 @@
 {
   "name": "@plgworks/react-accordions",
-  "version": "1.0.0.alpha.0.1",
+  "version": "1.0.0.alpha.0.4",
   "description": "Standard and Horizontal Accordions React components for React 18+",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
     "css",
-    "es",
-    "lib",
-    "umd"
+    "dist"
   ],
   "scripts": {
-    "build": "nwb build-react-component --no-demo",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "build": "webpack --mode production"
   },
   "peerDependencies": {
-    "react": "18.x"
+    "react": "18.x",
+    "react-dom": "^18.x"
   },
   "devDependencies": {
-    "nwb": "0.25.x",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.x",
+    "react-dom": "^18.x",
+    "@babel/core": "^7.x",
+    "@babel/preset-env": "^7.x",
+    "@babel/preset-react": "^7.x",
+    "babel-loader": "^8.0.1",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
   },
   "author": "PLG Works",
   "homepage": "https://plgworks.com",
