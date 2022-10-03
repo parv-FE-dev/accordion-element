@@ -1,6 +1,6 @@
 {
   "name": "@plgworks/react-accordions",
-  "version": "1.0.0.alpha.0.4",
+  "version": "1.0.0.alpha.0.5",
   "description": "Standard and Horizontal Accordions React components for React 18+",
   "main": "dist/index.js",
   "files": [
