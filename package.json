@@ -2,8 +2,7 @@
   "name": "@plgworks/react-accordions",
   "version": "1.0.0.alpha.0.4",
   "description": "Standard and Horizontal Accordions React components for React 18+",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "main": "dist/index.js",
   "files": [
     "css",
     "dist"
