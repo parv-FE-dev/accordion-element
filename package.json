@@ -1,32 +1,29 @@
 {
   "name": "@plgworks/react-accordions",
-  "version": "1.0.0.alpha.0.1",
+  "version": "1.0.0.alpha.7",
   "description": "Standard and Horizontal Accordions React components for React 18+",
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
-  ],
-  "scripts": {
-    "build": "nwb build-react-component --no-demo",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+  "source": "src/index.js",
+  "main": "lib/react-accordians.umd.js",
+  "module": "lib/react-accordians.mjs",
+  "dependencies": {
   },
   "peerDependencies": {
-    "react": "18.x"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "nwb": "0.25.x",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18",
+    "react-dom": "^18",
+    "microbundle": "^0.15.1",
+    "parcel": "1.12.3"
   },
+  "scripts": {
+    "dev": "parcel test/index.html",
+    "build": "microbundle --no-compress --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx"
+  },
+  "files": [
+    "css"
+  ],
   "author": "PLG Works",
   "homepage": "https://plgworks.com",
   "license": "MIT",
