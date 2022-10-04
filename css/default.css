@@ -1,0 +1,27 @@
+.horizontal-accordion{
+    display: block;
+	width: 60em;
+    height:40em !important;
+	margin: 20px auto;
+	background-color: #666;
+	overflow:  hidden;
+	border-radius: 5px;
+    border: 2px solid #000;
+    padding: 0;
+}
+.horizontal-accordion .accordion-button{
+    text-align: center;
+    font-size: 32px;
+    color: #FFF;
+    font-weight: bold;
+    border-left: 2px solid #000;
+}
+
+.horizontal-accordion .accordion-content{
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 22px;
+    background: #fff;
+    padding-top: 5em;
+    padding-left: 10px;
+}

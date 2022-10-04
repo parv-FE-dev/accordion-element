@@ -5,17 +5,15 @@
   "source": "src/index.js",
   "main": "lib/react-accordians.umd.js",
   "module": "lib/react-accordians.mjs",
-  "dependencies": {
-  },
   "peerDependencies": {
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "react": "^18",
-    "react-dom": "^18",
     "microbundle": "^0.15.1",
-    "parcel": "1.12.3"
+    "parcel": "1.12.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "scripts": {
     "dev": "parcel test/index.html",
