@@ -13,6 +13,13 @@
   height: auto;
 }
 
+.plgAccordion > li > input[type="checkbox"]:not(:checked) ~ section { 
+  height: 0;
+}
+.plgAccordion > li > input[type="checkbox"]:checked ~ section {
+  height: auto;
+}
+
 .plgAccordion > li > label {
     display: block;
     float: left;
@@ -23,6 +30,10 @@
 }
 .plgAccordion > li > input[type="radio"]:not(:checked) ~ label > * {
     white-space: nowrap;
+}
+
+.plgAccordion > li > input[type="checkbox"]:not(:checked) ~ label > * {
+  white-space: nowrap;
 }
 
 .plgAccordion > li > section {
@@ -36,9 +47,6 @@
     background-color: #fff;
 }
 
-.plgAccordion > li input[type="radio"]:not(:checked) ~ section { 
-  height: 0;
-}
 .plgAccordion .plgAccordionContent{
     /* height: 100%; */
   }

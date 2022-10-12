@@ -5,13 +5,13 @@ import UniqueIdGenerator from "./UniqueIdGenerator";
 
 export default function AccordionItem(props) {
   const uIdGeneratorRef = useRef( new UniqueIdGenerator("plg_ab_id") );
-
+  const isMultiselect = props.isMultiSelect ? Boolean(props.isMultiSelect) : false
+  const isCheckBoxOrRadio = isMultiselect ? "checkbox" : "radio";
   const getProcessedChildren = () =>{
     const children = props.children;
     const noOfChildren = children.length;
     const processedChildren = [];
     const idGenerator = uIdGeneratorRef.current;
-
     for(let cnt = 0; cnt < noOfChildren; cnt++ ) {
       const thisChild = children[ cnt ];
       if ( thisChild.type === AccordionContent ) {
@@ -29,9 +29,9 @@ export default function AccordionItem(props) {
     }
     return processedChildren;
   };
-
+  
   return <li className={` ${props.className || ''} listItem`}>
-    <input type="radio" id={props.rId} name={props.rName} defaultChecked={props.defaultOpen || ''} />
+    <input type={isCheckBoxOrRadio} id={props.rId} name={props.rName} defaultChecked={props.defaultOpen || ''} />
     {getProcessedChildren()}
   </li>;
 }

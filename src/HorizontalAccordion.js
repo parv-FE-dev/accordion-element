@@ -53,7 +53,6 @@ export default function HorizontalAccordion(props) {
 
   const getStyles = () => {
     if ( !isRehydrated ) { return; }
-    console.log("showButtonOnOpen", showButtonOnOpen);
     let stylesAsString = (`
       .${selfClass.current} > li > label {
         width: ${buttonWidth}px;

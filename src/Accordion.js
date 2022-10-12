@@ -40,7 +40,7 @@ export default function Accordion(props) {
       const itemId = idGenerator.newId();
       const radioName = props.multiSelect ? itemId : uniqueRadioName.current;
       processedChildren.push( 
-        <AccordionItem key={`${itemId}_wrap`} rId={(isRehydrated ? itemId : '')} rName={(isRehydrated ? radioName : '')} {...thisChild.props}></AccordionItem>
+        <AccordionItem key={`${itemId}_wrap`} rId={(isRehydrated ? itemId : '')} rName={(isRehydrated ? radioName : '')} {...thisChild.props} isMultiSelect={props.isMultiselect}></AccordionItem>
       );
     }
     return processedChildren;
@@ -61,6 +61,9 @@ export default function Accordion(props) {
         transition: height ${animationTime} ease;
       }
       .${selfClass.current} > li > input[type="radio"]:checked ~ section {
+        transition: height ${animationTime} ease;
+      }
+      .${selfClass.current} > li > input[type="checkbox"]:checked ~ section {
         transition: height ${animationTime} ease;
       }
     `);
