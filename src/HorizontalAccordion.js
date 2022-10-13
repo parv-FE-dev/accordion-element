@@ -11,7 +11,7 @@ export default function HorizontalAccordion(props) {
   const radioName = useRef( (new UniqueIdGenerator("plg_hai_name")).newId() );
   const showButtonOnOpen = String(props.showButtonOnOpen) === 'true' || false;
   const buttonWidth = props.buttonWidth ? Number(props.buttonWidth) : 68;
-  const animationTime = props.animationTime ? `${Number(props.animationTime)}ms` : "500ms";
+  const animationTime = props.animationTime ? `${Number(props.animationTime)}ms` : "1000ms";
 
   const getAccordionItems = () => {
     if ( !isRehydrated ) {
@@ -54,22 +54,31 @@ export default function HorizontalAccordion(props) {
   const getStyles = () => {
     if ( !isRehydrated ) { return; }
     let stylesAsString = (`
-      .${selfClass.current} > li > label {
+    .${selfClass.current} > li > label {
         width: ${buttonWidth}px;
       }
 
       ${ showButtonOnOpen ? '' : `.${selfClass.current} > li > input[type="radio"]:checked ~ label { display:none; }` }
-
-      .${selfClass.current} > li {
-        width: ${buttonWidth}px;
-        transition: width ${animationTime} ease;
-      }
-
-      .${selfClass.current} > li:has(> input[type="radio"]:checked ) {
-        width: calc(100% - ${(noOfItems - (showButtonOnOpen ? 0 : 1) ) * buttonWidth}px);
-        transition: width ${animationTime} ease;
-      }
+      
     `);
+
+    for(let i = 2 ;i<=noOfItems ;i++){
+      let im1 = i - 1;
+      for(let j = 1 ;j<=i; j++){
+         let str = (`.${selfClass.current} > li:nth-child(${j}):nth-last-child(${i - j + 1}) > input[type="radio"]:checked ~ section {
+            width: calc(100% - ${(noOfItems - 1) * buttonWidth}px);
+            transition: width ${animationTime} ease;
+          }
+          .${selfClass.current} > li:nth-child(${j}):nth-last-child(${i - j + 1}) > input[type="radio"]:checked ~ label {
+              width: 0;
+          }`)
+
+        stylesAsString = stylesAsString + '\n' + str;
+
+      }
+    }
+
+    console.log("css Style ", stylesAsString);
 
     return <style>
       {stylesAsString}
@@ -77,8 +86,10 @@ export default function HorizontalAccordion(props) {
   };
 
   const selfClassName = isRehydrated ? selfClass.current : '';
-  return <ul className={`${selfClassName} ${props.className || ''} plgHorizontalAccordion`}>
-    {accordionItems}
-    {getStyles()}
-  </ul>;
+  
+  return<>  {getStyles()}
+    <ul className={`${selfClassName} ${props.className || ''} plgHorizontalAccordion`}>
+      {accordionItems}
+    </ul>
+  </>;
 }

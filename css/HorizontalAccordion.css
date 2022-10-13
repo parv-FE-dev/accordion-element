@@ -3,6 +3,7 @@
   height:100%; 
   width:100%;
   overflow: hidden;
+  position: relative;
 } 
 
 .plgHorizontalAccordion > li > input{
@@ -28,14 +29,11 @@
   padding: 0;
   float: left;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   border: none;
   background-color: #fff;
 }
 
-.plgHorizontalAccordion > li > input[type="radio"]:checked ~ section {
-  width: 100%;
-}
 .plgHorizontalAccordion .plgAccordionContent{
   height: 100%;
 }
